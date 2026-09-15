@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where is the shape?</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Top Audio Settings Bar -->
+    <div class="audio-bar">
+      <button id="sound-btn" class="btn btn-audio">SOUND ON</button>
+      <button id="music-btn" class="btn btn-audio">MUSIC ON</button>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="top-bar">
+      <div class="hud-info">
+        <div class="score-box" id="score-display">SCORE: 0</div>
+        <div class="round-box" id="round-display">ROUND 1/5</div>
+      </div>
+      <div class="header-controls">
+        <button id="level-btn" class="btn btn-ctrl">CHANGE LEVEL</button>
+        <button id="restart-btn" class="btn btn-ctrl">RESTART</button>
+      </div>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="main-area">
+      <!-- Question Banner -->
+      <div class="question-card">
+        <h1 class="question-title" id="question-text">Where is the circle?</h1>
+      </div>
+
+      <!-- Game Stage with Table Surface -->
+      <div class="stage-wrapper">
+        <div class="stage" id="stage">
+          <!-- Identical Cups generated dynamically -->
+        </div>
+        <div class="table-surface"></div>
+      </div>
+
+      <!-- Trigger Button for Shuffling -->
+      <div class="start-trigger-container" id="trigger-container">
+        <button id="start-shuffle-btn" class="btn btn-start">START</button>
+      </div>
+    </main>
+
+    <!-- Home / Level Selection Screen (Modal) -->
+    <div class="modal-overlay active" id="level-modal">
+      <div class="modal-card home-card">
+        <div class="home-title-badge">WHERE IS THE SHAPE?</div>
+        <h2 class="modal-title">CHOOSE LEVEL</h2>
+        
+        <div class="level-cards-container">
+          <button class="level-card-btn" data-level="1">
+            <span class="level-name">LEVEL 1</span>
+            <span class="level-points-badge">+2 POINTS</span>
+          </button>
+          
+          <button class="level-card-btn" data-level="2">
+            <span class="level-name">LEVEL 2</span>
+            <span class="level-points-badge">+3 POINTS</span>
+          </button>
+          
+          <button class="level-card-btn" data-level="3">
+            <span class="level-name">LEVEL 3</span>
+            <span class="level-points-badge">+5 POINTS</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal-overlay" id="result-modal">
+      <div class="modal-card result-card" id="result-card">
+        <div class="result-status" id="result-title">&#10003; CORRECT!</div>
+        <div class="result-detail" id="result-detail">+2</div>
+        <div class="modal-actions">
+          <button id="retry-btn" class="btn btn-retry" style="display: none;">RETRY</button>
+          <button id="next-btn" class="btn btn-next" style="display: none;">NEXT GAME</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
